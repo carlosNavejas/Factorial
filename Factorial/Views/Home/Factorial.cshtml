@@ -1,0 +1,62 @@
+﻿@{
+    ViewData["Title"] = "Factorial Resultado";
+}
+@model Factorial.Models.Factor
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Factorial</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6"> <label> Numero Ingresado: </label></div>
+            <div class="col-md-6">@Model.NumeroFactorial </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6"> <label> Factorial: </label></div>
+            <div class="col-md-6">@Model.NumResultado </div>
+        </div>
+
+        <br>
+        <table class="table">
+            <thead>
+                <tr>
+                   
+                    <th scope="col">Iteraciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var p in this.Model.Iteraciones)
+                {
+                    <tr>
+                        <th scope="row">@p</th>
+                        </tr>
+
+                        }
+                </tbody>
+            </table>
+
+</div>
+
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+</body>
+</html>
